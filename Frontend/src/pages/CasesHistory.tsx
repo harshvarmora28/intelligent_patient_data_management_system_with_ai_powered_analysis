@@ -7,9 +7,9 @@ const CasesHistory = () => {
 	const [data, setData] = useState([{}]);
 
 	useEffect(() => {
-		// http://localhost:8080/patient_query/
+		// https://intelligent-patient-data-management.onrender.com/patient_query/
 		axios
-			.get('http://localhost:8080/patient_query/all')
+			.get('https://intelligent-patient-data-management.onrender.com/patient_query/all')
 			.then((response) => {
 				const data = response.data;
 				setData(

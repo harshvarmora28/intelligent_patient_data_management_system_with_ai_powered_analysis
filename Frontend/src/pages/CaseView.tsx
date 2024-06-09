@@ -81,7 +81,7 @@ const CaseViewComponent: React.FC = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			const axiosRes = await axios.get(
-				`http://localhost:8080/patient_query/${id}`
+				`https://intelligent-patient-data-management.onrender.com/patient_query/${id}`
 			);
 			console.log('case data.........', axiosRes);
 			setData(axiosRes.data.data);
@@ -93,7 +93,7 @@ const CaseViewComponent: React.FC = () => {
 
 	const handleCaseSubmit = () => {
 		axios
-			.put(`http://localhost:8080/gpt_response/update/${ai_response?._id}`, {
+			.put(`https://intelligent-patient-data-management.onrender.com/gpt_response/update/${ai_response?._id}`, {
 				...doctorResponse,
 				mailConfig: {
 					toEmail: data?.patient.email,

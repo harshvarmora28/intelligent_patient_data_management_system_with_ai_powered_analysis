@@ -53,7 +53,7 @@ const Dashboard = () => {
 			setIsLoading(false);
 			return;
 		}
-		axios.post('http://localhost:8080/patient_query/create', {
+		axios.post('https://intelligent-patient-data-management.onrender.com/patient_query/create', {
 			medical_history: medicalHistoryData,
 			life_style: lifeStyleData,
 			current_symptoms: currentSymptoms,
@@ -68,7 +68,7 @@ const Dashboard = () => {
 	};
 
 	useEffect(() => {
-		axios.get('http://localhost:8080/user/users/doctors').then((res) => {
+		axios.get('https://intelligent-patient-data-management.onrender.com/user/users/doctors').then((res) => {
 			setDoctors(res.data || []);
 		});
 	}, []);

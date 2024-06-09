@@ -53,7 +53,7 @@ const Register = () => {
 		}
 		setIsLoading(true);
 		await axios
-			.post(`${'http://localhost:8080'}/user/signup`, formData)
+			.post(`${'https://intelligent-patient-data-management.onrender.com'}/user/signup`, formData)
 			.then((res) => {
 				toast({
 					variant: 'default',

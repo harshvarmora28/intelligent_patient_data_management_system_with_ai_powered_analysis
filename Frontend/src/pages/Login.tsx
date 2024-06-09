@@ -28,7 +28,7 @@ const Login = () => {
 		e.preventDefault();
 		setIsLoading(true);
 		await axios
-			.post(`${'http://localhost:8080'}/user/login`, formData)
+			.post(`${'https://intelligent-patient-data-management.onrender.com'}/user/login`, formData)
 			.then((res) => {
 				toast({
 					variant: 'default',

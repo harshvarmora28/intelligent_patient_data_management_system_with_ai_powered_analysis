@@ -129,7 +129,7 @@ const App = () => {
 		] = `Token ${localStorage.getItem('token')}`;
 
 		const fetchMyProfile = async () => {
-			await axios.get('http://localhost:8080/user/me').then((res) => {
+			await axios.get('https://intelligent-patient-data-management.onrender.com/user/me').then((res) => {
 				const user = res.data.data;
 				console.log(user)
 				dispatch({ type: ActionTypes.SET_PATIENT_PROFILE, payload: user });
@@ -138,7 +138,7 @@ const App = () => {
 
 		const getMedicalHistoryAndLifeStyle = async () => {
 			axios
-				.get('http://localhost:8080/medical_history/mine')
+				.get('https://intelligent-patient-data-management.onrender.com/medical_history/mine')
 				.then((res) => {
 					const data = res.data;
 					dispatch({ type: ActionTypes.UPDATE_MEDICAL_HISTORY, payload: data });
@@ -147,7 +147,7 @@ const App = () => {
 					console.error(err);
 				});
 			axios
-				.get('http://localhost:8080/life_style/mine')
+				.get('https://intelligent-patient-data-management.onrender.com/life_style/mine')
 				.then((res) => {
 					const data = res.data;
 					dispatch({ type: ActionTypes.UPDATE_LIFE_STYLE, payload: data });

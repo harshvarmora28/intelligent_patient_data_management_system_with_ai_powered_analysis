@@ -38,7 +38,7 @@ const PatientMedicalAndLifeStyleForm = () => {
 
 	useEffect(() => {
 		axios
-			.get('http://localhost:8080/medical_history/mine')
+			.get('https://intelligent-patient-data-management.onrender.com/medical_history/mine')
 			.then((res) => {
 				setMedicalHistory({
 					allergies: res.data.allergies,
@@ -52,7 +52,7 @@ const PatientMedicalAndLifeStyleForm = () => {
 				console.error(err);
 			});
 		axios
-			.get('http://localhost:8080/life_style/mine')
+			.get('https://intelligent-patient-data-management.onrender.com/life_style/mine')
 			.then((res) => {
 				setLifeStyle({
 					smoking: res.data.smoking,
@@ -69,12 +69,12 @@ const PatientMedicalAndLifeStyleForm = () => {
 		e.preventDefault();
 		setIsLoading(true);
 		axios
-			.post('http://localhost:8080/medical_history/upsert', {
+			.post('https://intelligent-patient-data-management.onrender.com/medical_history/upsert', {
 				...medicalHistory,
 				vaccination_history: vaccinationHistory,
 			})
 			.then(() => {
-				axios.post('http://localhost:8080/life_style/upsert', lifeStyle);
+				axios.post('https://intelligent-patient-data-management.onrender.com/life_style/upsert', lifeStyle);
 				setIsLoading(false);
 			})
 			.catch((err) => {

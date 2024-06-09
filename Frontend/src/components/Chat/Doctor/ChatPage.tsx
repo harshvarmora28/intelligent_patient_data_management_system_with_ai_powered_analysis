@@ -9,7 +9,7 @@ export const ChatPageDoctor: React.FC = () => {
     const {state} = useGlobalState()
 
     useEffect(() => {
-		axios.get('http://localhost:8080/user/users/patients').then((res) => {
+		axios.get('https://intelligent-patient-data-management.onrender.com/user/users/patients').then((res) => {
 			setDoctors(res.data || []);
 		});
 	}, []);
