@@ -5,7 +5,7 @@ import Messages from "./Messages";
 import Input from "./Input";
 import { useGlobalState } from "@/context/useGlobalState";
 
-const ENDPOINT = "localhost:5000";
+const ENDPOINT = "https://chat-server-xnmd.onrender.com";
 let socket: any;
 
 const Chat = ({ room }: any) => {
